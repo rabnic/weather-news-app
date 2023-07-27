@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    width: 100vw;
+    background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-image: url('./river.jpg');
+   background-attachment: fixed;
+   overflow-x: hidden;
+}

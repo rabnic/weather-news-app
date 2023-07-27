@@ -8,9 +8,10 @@ function SearchInput({fetchData}) {
     const handleSearch = async () => {
 
         Promise.all([getDaysForecastData(location), getNewsArticles(location)])
-        .then((weather, news) => {
+        .then(([weather, news]) => {
             console.log(typeof weather, typeof news);
             console.log({weather, news});
+            fetchData(weather, news);
         })
     }
 

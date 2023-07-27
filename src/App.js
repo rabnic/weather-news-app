@@ -17,12 +17,13 @@ function App() {
   };
 
   const fetchData = (weather, news) => {
+    console.log('fetchData', weather, news);
     setNewsData(news);
     setWeatherData(weather);
   }
 
   return (
-    <div className="App w-screen min-h-screen bg-center bg-cover bg-no-repeat bg-[url('./river.jpg')] bg-blue-900 ">
+    <div className="App w-screen min-h-screen ">
       <div className="container mx-auto w-full h-full lg:w-3/4">
         <h1 className="text-3xl font-bold mb-4">Weather and News App</h1>
         <SearchInput fetchData={fetchData}/>
@@ -41,8 +42,8 @@ function App() {
           </button>
         </div>
 
-        { weatherData && newsData.weather ?
-        activeTab === 'weather' ? <Weather /> : <News />
+        { weatherData && newsData ?
+        activeTab === 'weather' ? <Weather /> : <News articles={newsData}/>
         : <h1>Nothing To Show</h1>
         }
       </div>

@@ -18,23 +18,16 @@ export const getDaysForecastData = (city) => {
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKEY}`)
     .then(response => response.json())
     .then(data => {
+        console.log(data.list);
         return data.list;
     })
 }
 
 export const getNewsArticles =  (city) => {
-    return fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=${APIKEY_News}`)
+    return fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=${APIKEY_News}&pageSize=15`)
     .then(response => response.json())
     .then(data => {
         console.log(data.articles)
         return data.articles;
-        // return {name: "Nicholas"};
     })
 }
-
-// const handleSearch = async () => {
-//     Promise.all([getDaysForecastData(location), getNewsArticles(location)])
-//     .then((weather, news) => {
-//         console.log(typeof weather, typeof news);
-//     })
-// }
