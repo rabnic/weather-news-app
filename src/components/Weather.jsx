@@ -68,7 +68,7 @@ function Weather({ weather, forecast }) {
           {/* <div className="divider table mx-2 text-center bg-transparent whitespace-nowrap"><span className="inline-block px-3"><small>Forecast</small></span></div> */}
           <div className=" py-6 relative">
             <div
-              className="text-center justify-between items-center flex"
+              className="text-center justify-between items-center flex flex-wrap"
               style={{ flexFlow: "initial" }}
             >
               {forecast &&
